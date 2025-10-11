@@ -1,0 +1,81 @@
+{
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk"
+        ]
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{usage}% 󰍛  ",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": "{percentage}%   "
+    },
+
+    "disk": {
+        "interval": 120,
+        "path": "/",
+        "format": "{percentage_used}% 󰋊 "
+    },
+
+    /*---------- CENTER ---------- */
+
+    "clock": {
+        // "timezone": "America/New_York",
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    /*---------- RIGHT SIDE ---------- */
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󱐋",
+        "format-plugged": "{capacity}% ",
+        "on-click": "~/.config/scripts/power-mode.sh",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+        "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{essid}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "network_manager"
+    },
+      "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon}   {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "amixer set Master toggle-mute ",
+    "on-click-right": "pavucontrol",
+    "tooltip": false
+  },
+
+    "custom/power": {
+        "format" : "⏻",
+		"tooltip": false,
+		"on-click": "wlogout"
+    }
+
+}

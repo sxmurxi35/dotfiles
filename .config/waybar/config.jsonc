@@ -1,0 +1,29 @@
+{
+  "include": [
+    "~/.config/waybar/modules/modules.jsonc",
+    "~/.config/waybar/modules/modules-workspace.jsonc",
+    "~/.config/waybar/modules/modules-groups.jsonc",
+    "~/.config/waybar/modules/modules-custom.jsonc"
+  ],
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  
+  "modules-left": [
+    "hyprland/workspaces",
+    "group/hardware"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+
+
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "battery",
+    "custom/power"
+  ]
+}
